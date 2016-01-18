@@ -14,7 +14,6 @@ def process_files():
 		pattern = re.compile('[\W_]+')
 		file_words[file] = open(file, 'r').read().lower();
 		file_words[file] = pattern.sub(' ',file_words[file])
-		re.sub(r'[\W_]+','', file_words[file])
 		file_words[file] = file_words[file].split()
 	return file_words
 
@@ -123,7 +122,7 @@ def intersection_text_query(string, full_word_index):
 	Returns filenames in which all words of the query string are present.
 
 	query string = 'a b c'
-	result =filenames with ('a' and 'b' and 'c')
+	result = filenames with ('a' and 'b' and 'c')
 
 	Results are ranked based on the number of occurences of the query words in th file.
 
