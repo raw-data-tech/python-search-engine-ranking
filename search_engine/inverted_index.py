@@ -124,7 +124,7 @@ def intersection_text_query(string, full_word_index):
 	query string = 'a b c'
 	result = filenames with ('a' and 'b' and 'c')
 
-	Results are ranked based on the number of occurences of the query words in th file.
+	Results are ranked based on the number of occurences of the query words in the file.
 
 	"""
 	pattern = re.compile('[\W_]+')
