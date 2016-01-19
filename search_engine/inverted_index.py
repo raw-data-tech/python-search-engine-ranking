@@ -148,20 +148,22 @@ full_file_index = get_full_file_index(file_words)
 
 full_word_index = get_full_word_index(full_file_index)
 
-query_string = raw_input("\n Enter query string: ")
+while True:
+	print "\n\n\n >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+	query_string = raw_input(" Enter query string: ")
 
-results1 = union_text_query(query_string, full_word_index)
-if results1:
-	print "\n 1.Union based search results...>>>>>> \n"
-	for result in results1:		
-		print result
-else:
-	print "\n 1.Sorry...No search results..!!!! "
+	results1 = union_text_query(query_string, full_word_index)
+	print "\n\n 1.Union based search results \n ----------------------------- \n"
+	if results1:
+		for result in results1:		
+			print result
+	else:
+		print " Sorry...No search results..!!!! "
 
-results2 = intersection_text_query(query_string, full_word_index)
-if results2:
-	print "\n 2.Intersection based search results...>>>>>> \n"
-	for result in results2:
-		print result
-else:
-	print "\n 2.Sorry...No search results..!!!! "
+	results2 = intersection_text_query(query_string, full_word_index)
+	print "\n\n 2.Intersection based search results \n ------------------------------------ \n"
+	if results2:
+		for result in results2:
+			print result
+	else:
+		print " Sorry...No search results..!!!! "
